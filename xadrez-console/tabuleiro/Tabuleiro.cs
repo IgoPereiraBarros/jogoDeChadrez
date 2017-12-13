@@ -37,6 +37,18 @@ namespace tabuleiro {
             p.posicao = pos;
         }
 
+        // retira uma peça do tabuleiro
+        public Peca retirarPeca(Posicao pos) {
+            if (peca(pos) == null) {
+                return null;
+            }
+
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.rows, pos.columns] = null;
+            return aux;
+        }
+
         // verifica se a posicao está no limite da matriz do tabuleiro
         public bool posicaoValida(Posicao pos) {
             if (pos.rows < 0 || pos.rows >= rows || pos.columns < 0 || pos.columns >= columns) {
