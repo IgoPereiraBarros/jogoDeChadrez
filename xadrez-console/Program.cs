@@ -7,21 +7,32 @@ namespace xadrez_console {
         static void Main(string[] args) {
 
             try {
-                PartidaDeXadrez p = new PartidaDeXadrez();
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                while (!p.terminada) {
+                while (!partida.terminada) {
                     Console.Clear();
-                    TelaTabuleiro.imprimirTabuleiro(p.tab);
+                    TelaTabuleiro.imprimirTabuleiro(partida.tab);
 
                     Console.WriteLine();
                     Console.WriteLine("-=-=-=-=-=-= Partida iniciada -=-=-=-=-=-=-");
                     Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = TelaTabuleiro.lerPosicaoXadrez().toPosicao();
+
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+
+                    Console.Clear();
+                    TelaTabuleiro.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.WriteLine();
+                    Console.WriteLine("-=-=-=-=-=-= Partida iniciada -=-=-=-=-=-=-");
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = TelaTabuleiro.lerPosicaoXadrez().toPosicao();
 
-                    p.executarMovimentos(origem, destino);
+                    partida.executarMovimentos(origem, destino);
                 }
                 
             }

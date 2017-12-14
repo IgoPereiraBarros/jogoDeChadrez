@@ -10,8 +10,13 @@ namespace tabuleiro {
             this.columns = columns;
         }
 
+        public void definirValores(int rows, int columns) {
+            this.rows = rows;
+            this.columns = columns;
+        }
+
         public override string ToString() {
-            return  rows
+            return rows
                     + ", "
                     + columns;
         }
