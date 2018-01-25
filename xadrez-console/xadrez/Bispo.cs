@@ -28,7 +28,7 @@ namespace xadrez {
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
                     break;
                 }
-                pos.definirValores(posicao.rows - 1, posicao.columns - 1);
+                pos.definirValores(pos.rows - 1, pos.columns - 1);
             }
 
             //NORDESTE
@@ -38,7 +38,7 @@ namespace xadrez {
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
                     break;
                 }
-                pos.definirValores(posicao.rows - 1, posicao.columns + 1);
+                pos.definirValores(pos.rows - 1, pos.columns + 1);
             }
 
             //SULDESTE
@@ -48,7 +48,7 @@ namespace xadrez {
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
                     break;
                 }
-                pos.definirValores(posicao.rows + 1, posicao.columns + 1);
+                pos.definirValores(pos.rows + 1, pos.columns + 1);
             }
 
             //SULDOESTE
@@ -58,7 +58,7 @@ namespace xadrez {
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
                     break;
                 }
-                pos.definirValores(posicao.rows + 1, posicao.columns - 1);
+                pos.definirValores(pos.rows + 1, pos.columns - 1);
             }
 
             return mat;
